@@ -11,6 +11,9 @@ RUN npm install
 # 4. Copy source code
 COPY . .
 
+# Generar el cliente de Prisma para que los tipos estén disponibles
+RUN npx prisma generate
+
 # 5. Build Next.js
 RUN npm run build
 

@@ -4,12 +4,18 @@ import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import { Plus, Music, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { redirect } from 'next/navigation'
+import { Song } from '@prisma/client'
 
 export default async function SongsPage() {
   const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect('/auth/login')
+  }
   
   const songs = await prisma.song.findMany({
-    where: { userId: session!.user.id },
+    where: { userId: session.user.id },
     orderBy: { updatedAt: 'desc' },
   })
 
@@ -58,7 +64,7 @@ export default async function SongsPage() {
         </div>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {songs.map((song) => (
+          {songs.map((song: Song) => (
             <Link
               key={song.id}
               href={`/dashboard/songs/${song.id}`}
