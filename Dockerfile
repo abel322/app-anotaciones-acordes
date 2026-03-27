@@ -2,7 +2,7 @@
 FROM node:20-alpine
 # Añade esta línea para instalar la compatibilidad que Prisma necesita
 # RUN apk add --no-cache libc6-compat openssl1.1-compat
-
+RUN apk add --no-cache libc6-compat openssl
 # 2. Set working directory
 WORKDIR /app
 
