@@ -1,6 +1,6 @@
-﻿'use client';
+'use client';
 
-import PracticeSession from '@/frontend/src/pages/PracticeSession';
+import { PracticeSession } from '@/components/bass/PracticeSession';
 
 export default function BassPracticeSession() {
   return <PracticeSession instrument="BASS" />;

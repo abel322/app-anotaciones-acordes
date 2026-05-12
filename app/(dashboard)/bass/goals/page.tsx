@@ -1,6 +1,6 @@
-﻿'use client';
+'use client';
 
-import GoalList from '@/frontend/src/pages/GoalList';
+import { GoalList } from '@/components/bass/GoalList';
 
 export default function BassGoals() {
   return <GoalList instrument="BASS" />;
