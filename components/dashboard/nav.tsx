@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { signOut } from 'next-auth/react'
-import { Music, Home, Library, Search, Settings, LogOut, Plus } from 'lucide-react'
+import { Music, Music2, Home, Library, Search, Settings, LogOut, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
@@ -22,6 +22,7 @@ export function DashboardNav({ user }: NavProps) {
   const links = [
     { href: '/dashboard', label: 'Inicio', icon: Home },
     { href: '/dashboard/songs', label: 'Canciones', icon: Library },
+    { href: '/dashboard/bass', label: 'Bass', icon: Music2 },
     { href: '/dashboard/search', label: 'Buscar', icon: Search },
     { href: '/dashboard/settings', label: 'Ajustes', icon: Settings },
   ]
